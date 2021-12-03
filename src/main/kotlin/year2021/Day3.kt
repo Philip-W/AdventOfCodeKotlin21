@@ -76,13 +76,8 @@ class Day3 : Year2021(3) {
         lines.forEach { line ->
             var curr = 0
             line.forEach { c ->
-                if (c == '1') {
-                    curr = curr.left()
-                    arr[curr] += 1
-                } else {
-                    curr = curr.right()
-                    arr[curr] += 1
-                }
+                curr = ( curr * 2) + 2 - (c -'0')
+                arr[curr] += 1
             }
         }
         return arr
